@@ -11,6 +11,10 @@ class Servicio(ABC):
     # Constructor
     def __init__(self, nombre, precio_base):
 
+            # Validamos que el nombre sea correcto
+        if nombre == "":
+            raise ValueError("El nombre del servicio no puede estar vacío")
+
         # Validamos que el precio sea correcto
         if precio_base <= 0:
             raise ValueError("El precio debe ser mayor a cero")
