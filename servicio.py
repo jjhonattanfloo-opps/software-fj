@@ -100,3 +100,31 @@ class Asesoria(Servicio):
     def descripcion(self):
 
         return f"Servicio de asesoría especializada: {self.nombre}"
+    
+# =========================================
+# PRUEBAS DEL SISTEMA
+# =========================================
+
+try:
+    # Creamos servicios
+    servicio1 = ReservaSala("Sala VIP", 50)
+    servicio2 = AlquilerEquipo("Computadores", 30)
+    servicio3 = Asesoria("Asesoría Python", 100)
+
+    # Mostramos información
+    print(servicio1.descripcion())
+    print("Costo:", servicio1.calcular_costo(5))
+
+    print("---------------------------------------------------")
+
+    print(servicio2.descripcion())
+    print("Costo:", servicio2.calcular_costo(3))
+
+    print("---------------------------------------------------")
+
+    print(servicio3.descripcion())
+    print("Costo:", servicio3.calcular_costo(2))
+
+except ValueError as error:
+
+    print("Error detectado:", error)
